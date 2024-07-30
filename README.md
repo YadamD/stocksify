@@ -10,7 +10,9 @@ Spotify artist stocks
 
 ### Usage:
 - Navigate to directory
-- `python get_monthly_listeners.py "ArtistName"`
+- Get listeners for one artist: `python get_monthly_listeners.py "ArtistName"`
+- Update stock history: `python update_stock_history.py`
+  - This will add a new entry to CSV only if the current date is not included, and update today's entry if new artist is added 
 
 ### Notes
 
