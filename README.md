@@ -8,7 +8,7 @@ Spotify artist stocks
 
 `pip install -r requirements.txt`
 
-### Useage:
+### Usage:
 - Navigate to directory
 - `python get_monthly_listeners.py "ArtistName"`
 
