@@ -1,0 +1,21 @@
+{
+    "johndoe": {
+        "Username": "johndoe",
+        "Stocks": [
+            {
+                "ArtistName": "Azahriah",
+                "CurrentValue": 50,
+                "AmountPurchased": 50,
+                "GrossAtPurchase": 700135
+            },
+            {
+                "ArtistName": "Elef\u00e1nt",
+                "CurrentValue": 10,
+                "AmountPurchased": 10,
+                "GrossAtPurchase": 114427
+            }
+        ],
+        "FloatingMoney": 40,
+        "PortfolioValue": 100
+    }
+}
