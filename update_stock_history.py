@@ -27,10 +27,10 @@ def add_listeners_to_csv(json_file='artist_db.json', csv_file='listeners_data.cs
         df = df[df['Date'] != current_date]
     
         # Check for missing artist columns and add them with NaN values
-        for artist_name in artist_dict.keys():
-            if artist_name not in df.columns:
-                print(f"Adding new artist {artist_name} to data and resetting today's values")
-                df[artist_name] = pd.Series([float('nan')] * len(df))
+    for artist_name in artist_dict.keys():
+        if artist_name not in df.columns:
+            print(f"Adding new artist {artist_name} to data and resetting today's values")
+            df[artist_name] = pd.Series([float('nan')] * len(df))
     
     # Create a dictionary to hold the new row of data
     new_row = {'Date': current_date}
