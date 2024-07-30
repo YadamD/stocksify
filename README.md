@@ -1,0 +1,2 @@
+# stocksify
+Spotify artist stocks
