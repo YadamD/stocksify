@@ -8,6 +8,12 @@ Spotify artist stocks
 
 `pip install -r requirements.txt`
 
+### Setup page requirements
+
+- Make sure you have `npm` installed
+- `npm install` when in the `stocksify_page/stocksify-page` project
+- `npm run dev` to host the page locally
+
 ### Usage:
 - Navigate to directory
 - Get listeners for one artist: `python get_monthly_listeners.py "ArtistName"`
