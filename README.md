@@ -1,6 +1,10 @@
 # stocksify
 Spotify artist stocks
 
+## TODO
+- [ ] Add scheduled run to auto-log data every day!
+- [ ] Add more artists - to add an artist, see **Notes**
+
 ### Setup conda environment:
 `conda create -n myenv anaconda`
 
