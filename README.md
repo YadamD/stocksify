@@ -4,6 +4,7 @@ Spotify artist stocks
 ## TODO
 - [ ] Add scheduled run to auto-log data every day!
 - [ ] Add more artists - to add an artist, see **Notes**
+- [ ] Check Vercel for deployment
 
 ### Setup conda environment:
 `conda create -n myenv anaconda`
