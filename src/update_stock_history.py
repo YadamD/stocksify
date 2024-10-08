@@ -21,9 +21,8 @@ def add_listeners_to_csv(json_file='../data/artist_db.json', csv_file='../data/l
     # Check if the current date is already in the DataFrame
     if current_date in df['Date'].values:
         if set(df.columns) == set(list(artist_dict.keys()) + ['Date']):
-            print("Stock data up to date")
-            return
-        
+            print("Today's data already logged. Updating this info.")
+            #return
         df = df[df['Date'] != current_date]
     
         # Check for missing artist columns and add them with NaN values
@@ -42,7 +41,11 @@ def add_listeners_to_csv(json_file='../data/artist_db.json', csv_file='../data/l
         new_row[artist_name] = listeners
     
     # Append the new row to the DataFrame
-    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+    new_row_df = pd.DataFrame([new_row])
+    df = pd.concat([df, new_row_df], ignore_index=True)
+    int_columns = [col for col in new_row_df.columns if col != 'Date']
+    for col in int_columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(df[col]).astype('Int64')
     
 
     # Save the updated DataFrame to the CSV file

@@ -4,18 +4,37 @@
         "Stocks": [
             {
                 "ArtistName": "Azahriah",
-                "CurrentValue": 50,
+                "CurrentValue": 50.11604904768367,
                 "AmountPurchased": 50,
                 "GrossAtPurchase": 700135
             },
             {
                 "ArtistName": "Elef\u00e1nt",
-                "CurrentValue": 10,
+                "CurrentValue": 10.020100151188094,
                 "AmountPurchased": 10,
                 "GrossAtPurchase": 114427
             }
         ],
         "FloatingMoney": 40,
+        "PortfolioValue": 60.13614919887176
+    },
+    "Bence": {
+        "Username": "Bence",
+        "Stocks": [
+            {
+                "ArtistName": "Moriones",
+                "CurrentValue": 10,
+                "AmountPurchased": 10,
+                "GrossAtPurchase": 202680
+            },
+            {
+                "ArtistName": "Azahriah",
+                "CurrentValue": 0,
+                "AmountPurchased": 0,
+                "GrossAtPurchase": 701760
+            }
+        ],
+        "FloatingMoney": 90,
         "PortfolioValue": 100
     }
 }
