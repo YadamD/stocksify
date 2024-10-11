@@ -18,7 +18,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-    - name: Change working directory
-      run: cd src
     - name: Run script
+      working-directory: src
       run: python update_stock_history.py
