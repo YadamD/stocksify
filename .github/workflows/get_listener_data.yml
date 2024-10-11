@@ -11,13 +11,32 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # Uses GitHub token to push changes
+        
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'
+        
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+        
     - name: Run script
       working-directory: src
       run: python update_stock_history.py
+      
+    # Commit and push changes if CSV was modified
+    - name: Check for changes
+      run: git status
+    - name: Configure Git user
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Add and commit changes
+      run: |
+        git add ./data/listeners_data.csv
+        git commit -m "Update CSV file via script" || echo "No changes to commit"
+    - name: Push changes
+      run: git push
