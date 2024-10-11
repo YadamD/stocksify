@@ -2,7 +2,8 @@
 Spotify artist stocks
 
 ## TODO
-- [ ] Add scheduled run to auto-log data every day!
+- [x] Add scheduled run to auto-log data every day!
+  - Added with github actions    
 - [ ] Add more artists - to add an artist, see **Notes**
 - [ ] Check Vercel for deployment
 
