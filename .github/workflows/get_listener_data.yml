@@ -25,7 +25,7 @@ jobs:
         
     - name: Run script
       working-directory: src
-      run: python update_stock_history.py
+      run: python stock_management_backend/update_stock_history.py
       
     # Commit and push changes if CSV was modified
     - name: Check for changes
