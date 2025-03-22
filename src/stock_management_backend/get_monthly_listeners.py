@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import re
 import argparse
 import json
+import logging
+
+logging.basicConfig(level=logging.WARNING)
 
 def extract_int_from_string(input_string):
     # Use a regular expression to find the number in the string
@@ -41,14 +44,13 @@ def get_spotify_listeners(artist_name):
     soup = BeautifulSoup(response.content, 'html.parser')
 
     # Find the monthly listeners
-    monthly_listeners = soup.find('div', {'data-testid': 'monthly-listeners-label'}).text
-    
-    monthly_listeners = extract_int_from_string(monthly_listeners)
-    
-    if not monthly_listeners:
-        print(f"Monthly listeners not found for {artist_name}.")
-        return None
-    
+    try:
+        monthly_listeners = soup.find('div', {'data-testid': 'monthly-listeners-label'}).text
+        monthly_listeners = extract_int_from_string(monthly_listeners)
+    except:
+        monthly_listeners = None
+        logging.warning(f"⚠️ Could not find 'monthly-listeners-label' div. for {artist_name}")
+
     return monthly_listeners
 
 def main():
