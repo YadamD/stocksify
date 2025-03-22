@@ -46,10 +46,12 @@ def get_spotify_listeners(artist_name):
     # Find the monthly listeners
     try:
         monthly_listeners = soup.find('div', {'data-testid': 'monthly-listeners-label'}).text
-        monthly_listeners = extract_int_from_string(monthly_listeners)
     except:
         monthly_listeners = None
-        logging.warning(f"⚠️ Could not find 'monthly-listeners-label' div. for {artist_name}")
+        logging.warning(f"⚠️ Could not find 'monthly-listeners-label' div. for {artist_name}, at url {artist_url}")
+    
+    if monthly_listeners:
+        monthly_listeners = extract_int_from_string(monthly_listeners)
 
     return monthly_listeners
 
